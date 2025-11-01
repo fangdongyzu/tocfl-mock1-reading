@@ -1,27 +1,28 @@
 const quizData = [
-    {
+  // Part 1: Sentence Comprehension (1-15)
+  {
     "id": 1,
     "part": 1,
-    "question": "小王和朋友們一起在游泳池游泳。",
-    "image": "images/01.png",
+    "question": "桌子上放著三種水果。",
+    "image": "images/1.png",
     "options": ["(A)", "(B)", "(C)"],
-    "answer": "A",
+    "answer": "B",
     "remark": ""
   },
   {
     "id": 2,
     "part": 1,
-    "question": "他喜歡在吃飯的時候看雜誌。",
-    "image": "images/02.png",
+    "question": "老王正畫著小天的臉。",
+    "image": "images/2.png",
     "options": ["(A)", "(B)", "(C)"],
-    "answer": "A",
+    "answer": "B",
     "remark": ""
   },
   {
     "id": 3,
     "part": 1,
-    "question": "咖啡店裡一個客人也沒有。",
-    "image": "images/03.png",
+    "question": "他的房間很乾淨。",
+    "image": "images/3.png",
     "options": ["(A)", "(B)", "(C)"],
     "answer": "A",
     "remark": ""
@@ -29,8 +30,8 @@ const quizData = [
   {
     "id": 4,
     "part": 1,
-    "question": "小明自己騎機車去市場，幫媽媽買菜。",
-    "image": "images/04.png",
+    "question": "王小明把李天華三個字寫在紙上。",
+    "image": "images/4.png",
     "options": ["(A)", "(B)", "(C)"],
     "answer": "C",
     "remark": ""
@@ -38,44 +39,44 @@ const quizData = [
   {
     "id": 5,
     "part": 1,
-    "question": "他平常吃完晚餐後喜歡到公園散步。",
-    "image": "images/05.png",
-    "options": ["(A)", "(B)", "(C)"],
-    "answer": "A",
-    "remark": ""
-  },
-  {
-    "id": 6,
-    "part": 1,
-    "question": "醫生正在病房裡和病人說話。",
-    "image": "images/06.png",
-    "options": ["(A)", "(B)", "(C)"],
-    "answer": "A",
-    "remark": ""
-  },
-  {
-    "id": 7,
-    "part": 1,
-    "question": "下大雨了，所以很多人都在買雨衣。",
-    "image": "images/07.png",
-    "options": ["(A)", "(B)", "(C)"],
-    "answer": "C",
-    "remark": ""
-  },
-  {
-    "id": 8,
-    "part": 1,
-    "question": "今天天氣很冷，小月不只穿長褲，還穿了外套。",
-    "image": "images/08.png",
+    "question": "志明什麼球都玩，但是最喜歡玩足球。",
+    "image": "images/5.png",
     "options": ["(A)", "(B)", "(C)"],
     "answer": "B",
     "remark": ""
   },
   {
+    "id": 6,
+    "part": 1,
+    "question": "小心！你杯子裡的水快要滿了！",
+    "image": "images/6.png",
+    "options": ["(A)", "(B)", "(C)"],
+    "answer": "C",
+    "remark": ""
+  },
+  {
+    "id": 7,
+    "part": 1,
+    "question": "過了前面的路口，再往前走一會兒就到醫院了。",
+    "image": "images/7.png",
+    "options": ["(A)", "(B)", "(C)"],
+    "answer": "A",
+    "remark": ""
+  },
+  {
+    "id": 8,
+    "part": 1,
+    "question": "我平常都六點起床，可是今天晚了半小時。",
+    "image": "images/8.png",
+    "options": ["(A)", "(B)", "(C)"],
+    "answer": "C",
+    "remark": ""
+  },
+  {
     "id": 9,
     "part": 1,
-    "question": "小明比妹妹高，也比爸爸高。",
-    "image": "images/09.png",
+    "question": "張先生開車的時候喜歡聽音樂。",
+    "image": "images/9.png",
     "options": ["(A)", "(B)", "(C)"],
     "answer": "C",
     "remark": ""
@@ -83,34 +84,34 @@ const quizData = [
   {
     "id": 10,
     "part": 1,
-    "question": "到第二個路口以前，會先經過一家銀行。",
+    "question": "這幾天晚上的風好大。",
     "image": "images/10.png",
     "options": ["(A)", "(B)", "(C)"],
-    "answer": "C",
+    "answer": "B",
     "remark": ""
   },
   {
     "id": 11,
     "part": 1,
-    "question": "小美想要一雙鞋子，但是收到了一雙襪子。",
+    "question": "妹妹看完信以後，心情很愉快。",
     "image": "images/11.png",
     "options": ["(A)", "(B)", "(C)"],
-    "answer": "C",
+    "answer": "B",
     "remark": ""
   },
   {
     "id": 12,
     "part": 1,
-    "question": "爸爸使用信用卡買了一台照相機。",
+    "question": "我們全家下個月就要搬到院子裡有大樹的房子住了。",
     "image": "images/12.png",
     "options": ["(A)", "(B)", "(C)"],
-    "answer": "A",
+    "answer": "B",
     "remark": ""
   },
   {
     "id": 13,
     "part": 1,
-    "question": "這些家具都壞了。",
+    "question": "因為媽媽怕高，所以沒和爸爸一起爬過山。",
     "image": "images/13.png",
     "options": ["(A)", "(B)", "(C)"],
     "answer": "C",
@@ -119,27 +120,29 @@ const quizData = [
   {
     "id": 14,
     "part": 1,
-    "question": "同學們都在教室裡做作業，所以很安靜。",
+    "question": "他們約好下課以後，先在學校門口見面，再一起去打球。",
     "image": "images/14.png",
     "options": ["(A)", "(B)", "(C)"],
-    "answer": "A",
+    "answer": "C",
     "remark": ""
   },
   {
     "id": 15,
     "part": 1,
-    "question": "如果你常常看新聞節目，就能知道很多新消息。",
+    "question": "小美和朋友想到百貨公司買帽子，可是最後只買了點心就離開了。",
     "image": "images/15.png",
     "options": ["(A)", "(B)", "(C)"],
     "answer": "B",
     "remark": ""
   },
+
+  // Part 2: Picture Description (16-30)
   {
     "id": 16,
     "part": 2,
     "question": "",
     "image": "images/16.png",
-    "options": ["(A) 教室裡有四位學生。", "(B) 教室裡面有三位老師。", "(C) 林老師正在上中文課。"],
+    "options": ["小狗正追著小貓。", "屋子裡面什麼都沒有。", "幾隻小鳥停在屋子上面。"],
     "answer": "C",
     "remark": ""
   },
@@ -148,8 +151,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/17.png",
-    "options": ["(A) 這裡一共有六個人。", "(B) 他們又吃菜又喝飲料。", "(C) 所有的人都正用著筷子。"],
-    "answer": "B",
+    "options": ["這裡有樹和一間房子。", "房子的前面停了幾輛車。", "有一些人站在房子旁邊。"],
+    "answer": "A",
     "remark": ""
   },
   {
@@ -157,8 +160,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/18.png",
-    "options": ["(A) 女孩站在草地上。", "(B) 地上有一個袋子。", "(C) 男孩們正在踢足球。"],
-    "answer": "B",
+    "options": ["她正在休息。", "她在床上睡覺。", "她正寫著作業。"],
+    "answer": "A",
     "remark": ""
   },
   {
@@ -166,8 +169,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/19.png",
-    "options": ["(A) 他把椅子搬出去。", "(B) 他把椅子搬進房間來。", "(C) 他把椅子放在窗戶下面。"],
-    "answer": "A",
+    "options": ["短頭髮的小姐在喝酒。", "長頭髮的小姐穿裙子。", "穿裙子的小姐拿著皮包。"],
+    "answer": "B",
     "remark": ""
   },
   {
@@ -175,8 +178,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/20.png",
-    "options": ["(A) 孩子在玩水。", "(B) 媽媽在弄衣服。", "(C) 爸爸在打掃家裡。"],
-    "answer": "B",
+    "options": ["小吃店九點以前休息。", "小吃店十二點開始休息。", "十二點以後可以去小吃店吃飯。"],
+    "answer": "C",
     "remark": ""
   },
   {
@@ -184,8 +187,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/21.png",
-    "options": ["(A) 要先煮菜再放鹽。", "(B) 做這道菜用不了多少時間。", "(C) 這個方法教你怎麼烤青菜。"],
-    "answer": "B",
+    "options": ["一天吃三粒。", "三天吃一次。", "先吃飯再吃幾粒。"],
+    "answer": "C",
     "remark": ""
   },
   {
@@ -193,8 +196,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/22.png",
-    "options": ["(A) 誰都可以進去這間圖書館。", "(B) 圖書館中午休息一個小時。", "(C) 只有一個月可以進去圖書館。"],
-    "answer": "B",
+    "options": ["中午以後買票比較貴。", "上午買兩張票要500元。", "想看電影要中午以後才行。"],
+    "answer": "A",
     "remark": ""
   },
   {
@@ -202,8 +205,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/23.png",
-    "options": ["(A) 白小姐要找一間好學校。", "(B) 白小姐想和小美一塊兒住。", "(C) 從白小姐家到市場很方便。"],
-    "answer": "C",
+    "options": ["教室的門是關著的。", "這位老師今天穿裙子。", "這位老師的頭髮短短的。"],
+    "answer": "B",
     "remark": ""
   },
   {
@@ -211,8 +214,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/24.png",
-    "options": ["(A) 李大明留言給王華。", "(B) 王華中午要去開會。", "(C) 王華打電話給李大明。"],
-    "answer": "B",
+    "options": ["他們現在正在上課。", "他們從學校走出來。", "男孩走在女孩的前面。"],
+    "answer": "C",
     "remark": ""
   },
   {
@@ -220,8 +223,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/25.png",
-    "options": ["(A) 拿書時要先給錢。", "(B) 陳小姐買了一些書。", "(C) 林先生把書寄出去了。"],
-    "answer": "A",
+    "options": ["這家餐廳不賣飲料。", "餐廳裡一個人都沒有。", "這位女客人買了兩杯果汁。"],
+    "answer": "C",
     "remark": ""
   },
   {
@@ -229,7 +232,7 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/26.png",
-    "options": ["(A) 王明下午在辦公室。", "(B) 王明的媽媽在醫院。", "(C) 王明已經下班回家。"],
+    "options": ["小美下午三點多才到旅館。", "在這兒住一晚要兩百多塊。", "小美帶了好幾件大的行李。"],
     "answer": "B",
     "remark": ""
   },
@@ -238,8 +241,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/27.png",
-    "options": ["(A) 警察要大家看清楚紅綠燈。", "(B) 警察要大家騎車戴著安全帽。", "(C) 警察要大家不只晚上騎車開燈。"],
-    "answer": "C",
+    "options": ["那位男生正在賣麵包。", "等車的小姐拿著一袋水果。", "有一位小姐在第七十六號公車。"],
+    "answer": "B",
     "remark": ""
   },
   {
@@ -247,8 +250,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/28.png",
-    "options": ["(A) 每個人坐車都需要付錢。", "(B) 十月十日坐車不用買車票。", "(C) 國家生日那天沒有公車服務。"],
-    "answer": "B",
+    "options": ["王小姐買了三雙鞋子。", "這家店只賣鞋子和襪子。", "這家店也賣褲子和皮包。"],
+    "answer": "C",
     "remark": ""
   },
   {
@@ -256,8 +259,8 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/29.png",
-    "options": ["(A) 中午以後才有車子到舊城。", "(B) 可以搭 34 號火車到舊城去。", "(C) 只有下午才有到新城的火車。"],
-    "answer": "A",
+    "options": ["李天明教台北人英文。", "李天明要找外國人學英文。", "李天明覺得學中文很便宜。"],
+    "answer": "B",
     "remark": ""
   },
   {
@@ -265,204 +268,194 @@ const quizData = [
     "part": 2,
     "question": "",
     "image": "images/30.png",
-    "options": ["(A) 這裡的服務員每天都要上班。", "(B) 經驗多的人可以拿比較多的錢。", "(C) 今天的服務員不在工作。"],
+    "options": ["兩個人一起去，就有紅茶可以喝。", "一個人不到兩萬就可以去韓國旅行。", "三個人一起去的話，一共可以少給1000元。"],
     "answer": "B",
     "remark": ""
   },
+
+  // Part 3: Gap Filling (31-40)
   {
     "id": 31,
     "part": 3,
-    "question": "冬天快到了，小王想買一______黑色大衣。",
-    "image": "images/31.png",
-    "options": ["(A) 付", "(B) 件", "(C) 條"],
-    "answer": "B",
+    "question": "______ 著眼鏡的小女孩在看書。",
+    "image": "",
+    "options": ["穿", "帶", "戴"],
+    "answer": "C",
     "remark": ""
   },
   {
     "id": 32,
     "part": 3,
-    "question": "小李今天有時間，所以下午和小王______去商店買衣服。",
-    "image": "images/32.png",
-    "options": ["(A) 剛才", "(B) 一起", "(C) 經常"],
+    "question": "她一邊看書，一邊 ______ 筷子吃麵。",
+    "image": "",
+    "options": ["帶", "用", "找"],
     "answer": "B",
     "remark": ""
   },
   {
     "id": 33,
     "part": 3,
-    "question": "小王看到很多好看的大衣，他每一件______想買。",
-    "image": "images/33.png",
-    "options": ["(A) 都", "(B) 快", "(C) 先"],
+    "question": "那個小女孩 ______ 有一隻狗。",
+    "image": "",
+    "options": ["旁邊", "前邊", "後邊"],
     "answer": "A",
     "remark": ""
   },
   {
     "id": 34,
     "part": 3,
-    "question": "這些大衣太貴了，______便宜一點，小王就一定會買。",
-    "image": "images/34.png",
-    "options": ["(A) 或是", "(B) 不但", "(C) 要是"],
-    "answer": "C",
+    "question": "那隻狗 ______ 睡覺。",
+    "image": "",
+    "options": ["在", "要", "是"],
+    "answer": "A",
     "remark": ""
   },
   {
     "id": 35,
     "part": 3,
-    "question": "他們______了一個下午還沒______到想要的衣服，下次再買吧。",
-    "image": "images/35.png",
-    "options": ["(A) 撿…撿…", "(B) 找…找…", "(C) 收…收…"],
+    "question": "小女孩 ______ 小狗是好朋友。",
+    "image": "",
+    "options": ["有", "跟", "一起"],
     "answer": "B",
     "remark": ""
   },
   {
     "id": 36,
     "part": 3,
-    "question": "星期日下午，書店裡的人______多。",
-    "image": "images/36.png",
-    "options": ["(A) 非常", "(B) 正在", "(C) 一點"],
-    "answer": "A",
+    "question": "九月五日是小女孩的 ______。",
+    "image": "",
+    "options": ["生活", "生日", "星期日"],
+    "answer": "B",
     "remark": ""
   },
   {
     "id": 37,
     "part": 3,
-    "question": "要開學了，很多書都在特價。字典現在______賣三百五十元。",
-    "image": "images/37.png",
-    "options": ["(A) 每", "(B) 最", "(C) 只"],
-    "answer": "C",
+    "question": "大家都 ______ 她慶祝。",
+    "image": "",
+    "options": ["幫", "讓", "對"],
+    "answer": "A",
     "remark": ""
   },
   {
     "id": 38,
     "part": 3,
-    "question": "買兩本書比較便宜，______五百元。",
-    "image": "images/38.png",
-    "options": ["(A) 總是", "(B) 一共", "(C) 只好"],
-    "answer": "B",
+    "question": "她 ______ 到很多禮物。",
+    "image": "",
+    "options": ["收", "寄", "借"],
+    "answer": "A",
     "remark": ""
   },
   {
     "id": 39,
     "part": 3,
-    "question": "因為這裡的書都不貴，______人很多。",
-    "image": "images/39.png",
-    "options": ["(A) 雖然", "(B) 所以", "(C) 可是"],
-    "answer": "B",
+    "question": "所以，她今天非常 ______。",
+    "image": "",
+    "options": ["熱鬧", "舒服", "高興"],
+    "answer": "C",
     "remark": ""
   },
   {
     "id": 40,
     "part": 3,
-    "question": "這學期他要上法文課，他應該______法文字典。",
-    "image": "images/40.png",
-    "options": ["(A) 賣", "(B) 付", "(C) 買"],
-    "answer": "C",
+    "question": "她希望明年能 ______ 德國去玩。",
+    "image": "",
+    "options": ["到", "去", "來"],
+    "answer": "A",
     "remark": ""
   },
+
+  // Part 4: Paragraph Completion (41-45)
   {
     "id": 41,
     "part": 4,
-    "question": "",
-    "image": "images/41.png",
-    "options": ["(A) 想他的爸爸", "(B) 請大家幫忙", "(C) 不認識的人", "(D) 兩人都很高興", "(E) 他不想去找王明", "(F) 他一直在找王明"],
-    "answer": "A",
-    "remark": ""
+    "question": "昨天晚上我覺得很不舒服，______（41），所以很早就睡覺了。",
+    "image": "",
+    "options": ["還告訴我", "頭有點兒痛", "很容易生病", "覺得很舒服", "更不舒服了", "多注意自己的身體"],
+    "answer": "B",
+    "remark": "Paragraph 1"
   },
   {
     "id": 42,
     "part": 4,
-    "question": "",
-    "image": "images/42.png",
-    "options": ["(A) 想他的爸爸", "(B) 請大家幫忙", "(C) 不認識的人", "(D) 兩人都很高興", "(E) 他不想去找王明", "(F) 他一直在找王明"],
-    "answer": "A",
-    "remark": ""
+    "question": "今天早上起來，______（42）。",
+    "image": "",
+    "options": ["還告訴我", "頭有點兒痛", "很容易生病", "覺得很舒服", "更不舒服了", "多注意自己的身體"],
+    "answer": "E",
+    "remark": "Paragraph 1"
   },
   {
     "id": 43,
     "part": 4,
-    "question": "",
-    "image": "images/43.png",
-    "options": ["(A) 想他的爸爸", "(B) 請大家幫忙", "(C) 不認識的人", "(D) 兩人都很高興", "(E) 他不想去找王明", "(F) 他一直在找王明"],
+    "question": "我去看病，醫生說我感冒了，給了我一些藥，______（43）要多休息，多喝水，才會快點好。",
+    "image": "",
+    "options": ["還告訴我", "頭有點兒痛", "很容易生病", "覺得很舒服", "更不舒服了", "多注意自己的身體"],
     "answer": "A",
-    "remark": ""
+    "remark": "Paragraph 1"
   },
   {
     "id": 44,
     "part": 4,
-    "question": "",
-    "image": "images/44.png",
-    "options": ["(A) 想他的爸爸", "(B) 請大家幫忙", "(C) 不認識的人", "(D) 兩人都很高興", "(E) 他不想去找王明", "(F) 他一直在找王明"],
-    "answer": "A",
-    "remark": ""
+    "question": "這幾天的天氣一會兒熱，一會兒冷，______（44）。",
+    "image": "",
+    "options": ["還告訴我", "頭有點兒痛", "很容易生病", "覺得很舒服", "更不舒服了", "多注意自己的身體"],
+    "answer": "C",
+    "remark": "Paragraph 1"
   },
   {
     "id": 45,
     "part": 4,
-    "question": "",
-    "image": "images/45.png",
-    "options": ["(A) 想他的爸爸", "(B) 請大家幫忙", "(C) 不認識的人", "(D) 兩人都很高興", "(E) 他不想去找王明", "(F) 他一直在找王明"],
-    "answer": "A",
-    "remark": ""
+    "question": "我要______（45），不要再感冒了。",
+    "image": "",
+    "options": ["還告訴我", "頭有點兒痛", "很容易生病", "覺得很舒服", "更不舒服了", "多注意自己的身體"],
+    "answer": "F",
+    "remark": "Paragraph 1"
   },
+
+  // Part 5: Reading Comprehension (46-50)
   {
     "id": 46,
     "part": 5,
-    "question": "為什麼小明不去參加舞會？",
-    "image": "images/46.png",
-    "options": ["（A）因為他生病了", "（B）因為他想要休息", "（C）因為他得去工作", "（D）因為他喜歡在家看書"],
-    "answer": "B",
-    "remark": ""
+    "question": "曾有一項調查發現，很多員工生病的時候不敢請假，因為他們擔心老闆會不高興，覺得他們沒有責任感。有人認為，員工會這麼想是公司的責任。一個好的公司應該能照顧員工，而不是讓他們拿健康去換錢。因此，讓員工有幸福感，應該是未來企業努力的方向。",
+    "image": "",
+    "options": ["老闆應該給員工多一點兒假", "常關心別人的人更有責任感", "對公司有意見要勇敢說出來", "照顧身體比認真工作更重要"],
+    "answer": "D",
+    "remark": "這篇文章說了什麼內容？"
   },
   {
     "id": 47,
     "part": 5,
-    "question": "為什麼小王覺得考試可能考不好？",
-    "image": "images/47.png",
-    "options": ["（A）他本來成績就不好", "（B）他的身體還沒恢復", "（C）他準備得還不夠好", "（D）他聽說考試非常難"],
-    "answer": "C",
-    "remark": ""
+    "question": "如果你每天都覺得身體很累，有一份報告或許可以告訴你原因。這份報告提到了下面幾種可能：不愛運動、水喝得不夠多、總是把事情想得太壞、不吃早餐、吃太多沒營養的食物等。以上幾點，只要簡單思考一下自己符合了幾項，再試著做出一些改變，想讓自己更健康一點也不難。",
+    "image": "",
+    "options": ["要培養運動的好習慣", "想要吃什麼就吃什麼", "平常應該多做點好事", "吃早餐以後不要喝水"],
+    "answer": "A",
+    "remark": "在改善健康方面，下面哪一個是作者的建議？"
   },
- {
-  "id": 48,
-  "part": 5,
-  "question": "這篇文章告訴我們什麼事？",
-  "image": "images/48.png",
-  "options": [
-    "（A）小美現在在臺灣",
-    "（B）小華三月要去日本",
-    "（C）小美很想吃好吃的點心",
-    "（D）小華暑假的時候要去找小美"
-  ],
-  "answer": "D",
-  "remark": ""
-},
-{
-  "id": 49,
-  "part": 5,
-  "question": "為什麼小月決定買那條白色的裙子？",
-  "image": "images/49.png",
-  "options": [
-    "（A）因為小月只喜歡白色的裙子",
-    "（B）因為那條裙子的價格太便宜了",
-    "（C）因為以後就買不到那條裙子了",
-    "（D）因為小月的媽媽要她買那條裙子"
-  ],
-  "answer": "C",
-  "remark": ""
-},
-{
-  "id": 50,
-  "part": 5,
-  "question": "大同為什麼不常回家呢？",
-  "image": "images/50.png",
-  "options": [
-    "（A）他的事情很多",
-    "（B）他沒有錢回家",
-    "（C）他跟家人的關係不好",
-    "（D）他覺得南部東西很"
-  ],
-  "answer": "A",
-  "remark": ""
-}
-
+  {
+    "id": 48,
+    "part": 5,
+    "question": "從前有一個地方很久都不下雨，人們不管怎麼求雨都沒有用。有一次，他們從很遠的地方，請來一位有智慧的老人，希望他可以幫幫忙。老人在附近走了走、看了看，然後告訴他們，請蓋一間小屋，讓他住進去三天，三天當中，他任何人都不見。結果，三天後真的下雨了。大家都問他是怎麼做到的，他只回答，只要自己的心安靜了，外面就安靜了，所以下雨了。",
+    "image": "",
+    "options": ["先照顧自己，才能幫助別人", "想改變環境，就先改變心情", "年輕人應該要學會尊敬老人", "聰明的人知道什麼時候下雨"],
+    "answer": "B",
+    "remark": "這個故事告訴了我們什麼事？"
+  },
+  {
+    "id": 49,
+    "part": 5,
+    "question": "說到錢，每個人對它的想法、使用方式和重視程度都不一樣。有人說：「錢是沒有性格的，它在誰的手上就像誰」。這句話說得很有道理，人們因為對錢的看法不同，而選擇不同的生活方式。比方說，有的人喜歡看到銀行裡的數字不斷增加，所以每天努力工作，很少花錢；有的人覺得錢只要夠用就好，不必太在意工作，因為「自己的時間」，也是一種看不到的「錢」。",
+    "image": "",
+    "options": ["錢比什麼都重要", "錢可以解決所有事情", "人人有自己對錢的看法", "錢得放在銀行裡才有價值"],
+    "answer": "C",
+    "remark": "這段話說了下面哪件事？"
+  },
+  {
+    "id": 50,
+    "part": 5,
+    "question": "以前，電影院的門口常常出現一個牌子，要觀眾別帶外面買的食物進去，如果想吃東西，只能買電影院裡賣的食物。後來，新聞說，觀眾其實可以拒絕配合這些電影院的規矩。說到這個問題，我認為，電影院的要求不是沒有道理，因為電影結束以後，他們還得打掃那些垃圾。其次，如果有人帶了一些有奇怪味道的食物進電影院，也很容易影響其他看電影的人。",
+    "image": "",
+    "options": ["應該要避免吃有特別味道的東西", "覺得吃什麼東西都是個人的自由", "認為電影院的要求沒有任何道理", "看電影的人都有責任要打掃垃圾"],
+    "answer": "A",
+    "remark": "作者對在電影院裡吃東西的行為怎麼看？"
+  }
 ];
