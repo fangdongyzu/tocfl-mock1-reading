@@ -17,10 +17,11 @@ const scoreElement = document.getElementById('score');
 const totalElement = document.getElementById('total');
 const percentageElement = document.getElementById('percentage');
 const resultsDetails = document.getElementById('results-details');
+const selectedPartsElement = document.getElementById('selected-parts');
 const partBreakdownElement = document.getElementById('part-breakdown');
 const startQuizBtn = document.getElementById('start-quiz-btn');
 
-// Part information
+// Part information (Ranges removed as requested)
 const partInfo = {
     1: { name: "Part 1: Sentence Comprehension" },
     2: { name: "Part 2: Picture Description" },
@@ -76,6 +77,15 @@ function showCurrentPart() {
     const currentPartQuestions = questionsByPart[currentPart];
     
     partTitle.textContent = `${partInfo[currentPart].name}`;
+    
+    // Show all selected parts as tags with current part highlighted
+    selectedPartsElement.innerHTML = '';
+    currentParts.forEach((part, index) => {
+        const partTag = document.createElement('span');
+        partTag.className = `part-tag ${index === currentPartIndex ? 'current-part' : ''}`;
+        partTag.textContent = `Part ${part}`;
+        selectedPartsElement.appendChild(partTag);
+    });
     
     // Show all questions for current part
     showAllQuestions(currentPartQuestions);
@@ -159,6 +169,7 @@ function createStandardQuestion(question) {
     const showImageInCard = question.image && !isSharedImageRange;
 
     // For Part 1, we do NOT show the generated option letter circle (A, B, C...)
+    // because the text itself already contains it (e.g., "(A) ...")
     const showOptionLetter = question.part !== 1;
 
     return `
@@ -263,9 +274,6 @@ function submitQuiz() {
     // Switch to results view
     quizContainer.classList.add('hidden');
     resultsContainer.classList.remove('hidden');
-
-  // JUMP TO TOP IMMEDIATELY (No scrolling effect)
-    window.scrollTo(0, 0);
 }
 
 function showPartBreakdown(partScores) {

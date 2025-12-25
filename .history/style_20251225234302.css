@@ -1,6 +1,3 @@
-html {
-    scroll-behavior: auto;
-}
 * {
     margin: 0;
     padding: 0;
@@ -162,6 +159,29 @@ header p {
     font-size: 1.8em;
 }
 
+/* Removed .progress class */
+
+.selected-parts {
+    margin-top: 15px;
+}
+
+.part-tag {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1.1em;
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+
+.part-tag.current-part {
+    background: #e67e22;
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
 .part-header {
     background: #34495e;
     color: white;
@@ -279,7 +299,7 @@ header p {
     background: white;
     transition: all 0.3s;
     font-size: 1.1em;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
 .option.selected .option-letter {
@@ -355,8 +375,7 @@ header p {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 30px;
 }
 
 .home-btn {
@@ -378,7 +397,7 @@ header p {
 }
 
 .score {
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     padding: 25px;
     background: #ecf0f1;
     border-radius: 10px;

@@ -17,16 +17,17 @@ const scoreElement = document.getElementById('score');
 const totalElement = document.getElementById('total');
 const percentageElement = document.getElementById('percentage');
 const resultsDetails = document.getElementById('results-details');
+const selectedPartsElement = document.getElementById('selected-parts');
 const partBreakdownElement = document.getElementById('part-breakdown');
 const startQuizBtn = document.getElementById('start-quiz-btn');
 
 // Part information
 const partInfo = {
-    1: { name: "Part 1: Sentence Comprehension" },
-    2: { name: "Part 2: Picture Description" },
-    3: { name: "Part 3: Word Fill-in" },
-    4: { name: "Part 4: Paragraph Completion" },
-    5: { name: "Part 5: Reading Comprehension" }
+    1: { name: "Part 1: Sentence Comprehension", range: "1-15" },
+    2: { name: "Part 2: Picture Description", range: "16-30" },
+    3: { name: "Part 3: Word Fill-in", range: "31-35" },
+    4: { name: "Part 4: Paragraph Completion", range: "36-45" },
+    5: { name: "Part 5: Reading Comprehension", range: "46-50" }
 };
 
 // Event Listeners
@@ -77,6 +78,15 @@ function showCurrentPart() {
     
     partTitle.textContent = `${partInfo[currentPart].name}`;
     
+    // Show all selected parts as tags with current part highlighted
+    selectedPartsElement.innerHTML = '';
+    currentParts.forEach((part, index) => {
+        const partTag = document.createElement('span');
+        partTag.className = `part-tag ${index === currentPartIndex ? 'current-part' : ''}`;
+        partTag.textContent = `Part ${part}`;
+        selectedPartsElement.appendChild(partTag);
+    });
+    
     // Show all questions for current part
     showAllQuestions(currentPartQuestions);
     updateNavigationButtons();
@@ -116,7 +126,14 @@ function showAllQuestions(questions) {
         }
 
         // --- 2. 產生個別題目卡片 ---
-        questionsHTML += createStandardQuestion(question);
+        
+        // 這裡使用標準格式生成函式 (createStandardQuestion)
+        // 如果您原本針對 Part 4 有特殊的 createPart4Question 邏輯，請改回呼叫 createPart4Question(question)
+        if (question.part === 4) {
+             questionsHTML += createStandardQuestion(question); 
+        } else {
+             questionsHTML += createStandardQuestion(question);
+        }
     });
     
     questionContainer.innerHTML = questionsHTML;
@@ -153,13 +170,12 @@ function showAllQuestions(questions) {
 
 function createStandardQuestion(question) {
     // 檢查是否為「共用圖片」的題號範圍 (31-40)
+    // 31-35 和 36-40 都已在上方顯示大圖，所以卡片內部不需再顯示圖片
     const isSharedImageRange = (question.id >= 31 && question.id <= 40);
     
-    // 決定是否在卡片內顯示圖片
+    // 決定是否在卡片內顯示圖片：
+    // 條件：題目本身有圖片資料 AND 不在共用圖片的範圍內
     const showImageInCard = question.image && !isSharedImageRange;
-
-    // For Part 1, we do NOT show the generated option letter circle (A, B, C...)
-    const showOptionLetter = question.part !== 1;
 
     return `
         <div class="question-item">
@@ -174,7 +190,26 @@ function createStandardQuestion(question) {
                     const optionLetter = String.fromCharCode(65 + index);
                     return `
                         <div class="option" data-question-id="${question.id}" data-option="${optionLetter}">
-                            ${showOptionLetter ? `<span class="option-letter">${optionLetter}</span>` : ''}
+                            <span class="option-letter">${optionLetter}</span>
+                            <span class="option-text">${option}</span>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+    `;
+}
+
+function createPart4Question(question) {
+    return `
+        <div class="question-item">
+            <div class="question-text">${question.id}. ${question.question}</div>
+            <div class="options">
+                ${question.options.map((option, index) => {
+                    const optionLetter = String.fromCharCode(65 + index);
+                    return `
+                        <div class="option" data-question-id="${question.id}" data-option="${optionLetter}">
+                            <span class="option-letter">${optionLetter}</span>
                             <span class="option-text">${option}</span>
                         </div>
                     `;
@@ -252,7 +287,7 @@ function submitQuiz() {
     // Display overall results
     scoreElement.textContent = totalScore;
     totalElement.textContent = totalQuestions;
-    percentageElement.textContent = totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
+    percentageElement.textContent = Math.round((totalScore / totalQuestions) * 100);
     
     // Show part breakdown
     showPartBreakdown(partScores);
@@ -263,9 +298,6 @@ function submitQuiz() {
     // Switch to results view
     quizContainer.classList.add('hidden');
     resultsContainer.classList.remove('hidden');
-
-  // JUMP TO TOP IMMEDIATELY (No scrolling effect)
-    window.scrollTo(0, 0);
 }
 
 function showPartBreakdown(partScores) {

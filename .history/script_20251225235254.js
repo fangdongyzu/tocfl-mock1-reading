@@ -264,8 +264,8 @@ function submitQuiz() {
     quizContainer.classList.add('hidden');
     resultsContainer.classList.remove('hidden');
 
-  // JUMP TO TOP IMMEDIATELY (No scrolling effect)
-    window.scrollTo(0, 0);
+    // SCROLL TO TOP
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function showPartBreakdown(partScores) {

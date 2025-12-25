@@ -20,27 +20,27 @@
         <label class="part-checkbox">
           <input type="checkbox" data-part="1">
           <span class="checkmark"></span>
-          Part 1: Sentence Comprehension
+          Part 1: Sentence Comprehension (1-15)
         </label>
         <label class="part-checkbox">
           <input type="checkbox" data-part="2">
           <span class="checkmark"></span>
-          Part 2: Picture Description
+          Part 2: Picture Description (16-30)
         </label>
         <label class="part-checkbox">
           <input type="checkbox" data-part="3">
           <span class="checkmark"></span>
-          Part 3: Word Fill-in
+          Part 3: Word Fill-in (31-35)
         </label>
         <label class="part-checkbox">
           <input type="checkbox" data-part="4">
           <span class="checkmark"></span>
-          Part 4: Paragraph Completion
+          Part 4: Paragraph Completion (36-45)
         </label>
         <label class="part-checkbox">
           <input type="checkbox" data-part="5">
           <span class="checkmark"></span>
-          Part 5: Reading Comprehension
+          Part 5: Reading Comprehension (46-50)
         </label>
       </div>
       <button id="start-quiz-btn" class="start-btn">Start Quiz</button>
@@ -48,11 +48,12 @@
 
     <div id="quiz-container" class="quiz-container hidden">
       <div class="quiz-header">
-        <h2 id="part-title">Quiz in Progress</h2>
+
       </div>
 
       <div id="question-container">
-        </div>
+        <!-- Questions will be dynamically inserted here -->
+      </div>
 
       <div class="navigation">
         <button id="prev-btn" class="nav-btn" style="display: none;">Previous Part</button>
@@ -63,22 +64,17 @@
 
     <div id="results-container" class="results-container hidden">
       <h2>Quiz Results</h2>
-      
       <div class="score">
         <p>Score: <span id="score">0</span> / <span id="total">0</span></p>
         <p>Accuracy: <span id="percentage">0</span>%</p>
       </div>
-
-      <div class="result-actions">
-        <button id="restart-btn" class="restart-btn">Retake Test</button>
-        <a href="https://fangdongyzu.github.io/tocflmock/" class="home-btn">Home Page</a>
-      </div>
-
       <div class="part-breakdown" id="part-breakdown">
-        </div>
-      
+        <!-- Part breakdown will be shown here -->
+      </div>
       <div id="results-details" class="results-details">
-        </div>
+        <!-- Results will be dynamically inserted here -->
+      </div>
+      <button id="restart-btn" class="restart-btn">Restart</button>
     </div>
   </div>
 

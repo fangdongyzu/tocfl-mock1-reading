@@ -77,6 +77,8 @@ function showCurrentPart() {
     
     partTitle.textContent = `${partInfo[currentPart].name}`;
     
+    // Removed the "selectedPartsElement" logic here as requested
+    
     // Show all questions for current part
     showAllQuestions(currentPartQuestions);
     updateNavigationButtons();
@@ -263,9 +265,6 @@ function submitQuiz() {
     // Switch to results view
     quizContainer.classList.add('hidden');
     resultsContainer.classList.remove('hidden');
-
-  // JUMP TO TOP IMMEDIATELY (No scrolling effect)
-    window.scrollTo(0, 0);
 }
 
 function showPartBreakdown(partScores) {

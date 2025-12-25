@@ -1,6 +1,3 @@
-html {
-    scroll-behavior: auto;
-}
 * {
     margin: 0;
     padding: 0;
@@ -355,8 +352,8 @@ header p {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 25px; /* Spacing from score */
+    margin-bottom: 25px; /* Spacing from breakdown */
 }
 
 .home-btn {
@@ -378,7 +375,7 @@ header p {
 }
 
 .score {
-    margin-bottom: 25px;
+    margin-bottom: 25px; /* Reduced since buttons are next */
     padding: 25px;
     background: #ecf0f1;
     border-radius: 10px;

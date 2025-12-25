@@ -15,10 +15,10 @@ const submitBtn = document.getElementById('submit-btn');
 const restartBtn = document.getElementById('restart-btn');
 const scoreElement = document.getElementById('score');
 const totalElement = document.getElementById('total');
-const percentageElement = document.getElementById('percentage');
 const resultsDetails = document.getElementById('results-details');
 const partBreakdownElement = document.getElementById('part-breakdown');
 const startQuizBtn = document.getElementById('start-quiz-btn');
+const homeBtn = document.getElementById('home-btn');
 
 // Part information
 const partInfo = {
@@ -35,6 +35,13 @@ prevBtn.addEventListener('click', showPreviousPart);
 nextBtn.addEventListener('click', showNextPart);
 submitBtn.addEventListener('click', submitQuiz);
 restartBtn.addEventListener('click', restartQuiz);
+
+// Home button event listener
+if (homeBtn) {
+    homeBtn.addEventListener('click', () => {
+        window.location.href = "https://fangdongyzu.github.io/tocflmock/";
+    });
+}
 
 // Update start button state based on selection
 document.querySelectorAll('.part-checkbox input').forEach(checkbox => {
@@ -69,6 +76,8 @@ function startQuiz() {
     resultsContainer.classList.add('hidden');
     
     showCurrentPart();
+    // Scroll to top when starting
+    window.scrollTo(0, 0);
 }
 
 function showCurrentPart() {
@@ -80,18 +89,20 @@ function showCurrentPart() {
     // Show all questions for current part
     showAllQuestions(currentPartQuestions);
     updateNavigationButtons();
+    // Scroll to top when switching parts
+    window.scrollTo(0, 0);
 }
 
 function showAllQuestions(questions) {
     let questionsHTML = '';
     
-    // 定義 41-45 題的短文內容
+    // Text for 41-45
     const text41_45 = "昨天晚上我覺得很不舒服， ___（41）___ ，所以很早就睡覺了。今天早上起來， ___（42）___ 。我去看病，醫生說我感冒了，給了我一些藥， ___（43）___ 要多休息，多喝水，才會快點好。這幾天的天氣一會兒熱，一會兒冷， ___（44）___ 。我要___（45） ___，不要再感冒了。";
 
     questions.forEach(question => {
-        // --- 1. 在特定題號前，插入共用區塊 (圖片或文章) ---
+        // --- Insert Shared Context (Images/Text) ---
 
-        // Part 3: 31-35 題 (在 31 題上方顯示共用圖片)
+        // Part 3 (31-35)
         if (question.id === 31) {
             questionsHTML += `
                 <div class="context-container">
@@ -99,7 +110,7 @@ function showAllQuestions(questions) {
                 </div>`;
         }
         
-        // Part 4 (前半): 36-40 題 (在 36 題上方顯示共用圖片)
+        // Part 4 (36-40)
         if (question.id === 36) {
             questionsHTML += `
                 <div class="context-container">
@@ -107,7 +118,7 @@ function showAllQuestions(questions) {
                 </div>`;
         }
 
-        // Part 4 (後半): 41-45 題 (在 41 題上方顯示閱讀短文)
+        // Part 4 (41-45)
         if (question.id === 41) {
             questionsHTML += `
                 <div class="context-container">
@@ -115,32 +126,32 @@ function showAllQuestions(questions) {
                 </div>`;
         }
 
-        // --- 2. 產生個別題目卡片 ---
+        // --- Create Question Card ---
         questionsHTML += createStandardQuestion(question);
     });
     
     questionContainer.innerHTML = questionsHTML;
     
-    // 為所有選項加入點擊事件
+    // Click listeners for options
     document.querySelectorAll('.option').forEach(option => {
         option.addEventListener('click', (e) => {
             const questionId = parseInt(e.currentTarget.dataset.questionId);
             const selectedOption = e.currentTarget.dataset.option;
             
-            // 移除該題其他選項的選取狀態
+            // Remove previous selection
             document.querySelectorAll(`.option[data-question-id="${questionId}"]`).forEach(opt => {
                 opt.classList.remove('selected');
             });
             
-            // 標示當前選項
+            // Add selection
             e.currentTarget.classList.add('selected');
             
-            // 儲存使用者答案
+            // Save answer
             userAnswers[questionId] = selectedOption;
         });
     });
     
-    // 還原使用者之前的選擇 (如果有的話)
+    // Restore previous answers
     questions.forEach(question => {
         if (userAnswers[question.id]) {
             const selectedOption = document.querySelector(`.option[data-question-id="${question.id}"][data-option="${userAnswers[question.id]}"]`);
@@ -152,14 +163,9 @@ function showAllQuestions(questions) {
 }
 
 function createStandardQuestion(question) {
-    // 檢查是否為「共用圖片」的題號範圍 (31-40)
+    // Check if question ID is in the range that uses shared images (31-40)
     const isSharedImageRange = (question.id >= 31 && question.id <= 40);
-    
-    // 決定是否在卡片內顯示圖片
     const showImageInCard = question.image && !isSharedImageRange;
-
-    // For Part 1, we do NOT show the generated option letter circle (A, B, C...)
-    const showOptionLetter = question.part !== 1;
 
     return `
         <div class="question-item">
@@ -171,10 +177,9 @@ function createStandardQuestion(question) {
             ` : ''}
             <div class="options">
                 ${question.options.map((option, index) => {
-                    const optionLetter = String.fromCharCode(65 + index);
+                    const optionLetter = String.fromCharCode(65 + index); 
                     return `
                         <div class="option" data-question-id="${question.id}" data-option="${optionLetter}">
-                            ${showOptionLetter ? `<span class="option-letter">${optionLetter}</span>` : ''}
                             <span class="option-text">${option}</span>
                         </div>
                     `;
@@ -197,16 +202,6 @@ function updateNavigationButtons() {
         nextBtn.style.display = 'block';
         submitBtn.style.display = 'none';
     }
-    
-    // Update button texts
-    if (currentParts.length > 1) {
-        prevBtn.textContent = 'Previous Part';
-        nextBtn.textContent = 'Next Part';
-    } else {
-        prevBtn.style.display = 'none';
-        nextBtn.style.display = 'none';
-        submitBtn.style.display = 'block';
-    }
 }
 
 function showPreviousPart() {
@@ -227,7 +222,7 @@ function submitQuiz() {
     let totalScore = 0;
     let totalQuestions = 0;
     
-    // Calculate scores by part
+    // Calculate scores
     const partScores = {};
     currentParts.forEach(part => {
         const partQuestions = questionsByPart[part];
@@ -249,22 +244,21 @@ function submitQuiz() {
         };
     });
     
-    // Display overall results
+    // Display results
     scoreElement.textContent = totalScore;
     totalElement.textContent = totalQuestions;
-    percentageElement.textContent = totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
     
-    // Show part breakdown
+    // Show breakdown
     showPartBreakdown(partScores);
     
-    // Show detailed results
+    // Show details
     showDetailedResults();
     
-    // Switch to results view
+    // Switch views
     quizContainer.classList.add('hidden');
     resultsContainer.classList.remove('hidden');
 
-  // JUMP TO TOP IMMEDIATELY (No scrolling effect)
+    // NEW: Scroll to the very top of the page instantly
     window.scrollTo(0, 0);
 }
 
@@ -326,7 +320,7 @@ function restartQuiz() {
     resultsContainer.classList.add('hidden');
     partSelection.classList.remove('hidden');
     
-    // Reset checkboxes
+    // Reset inputs
     document.querySelectorAll('.part-checkbox input').forEach(checkbox => {
         checkbox.checked = false;
     });
@@ -336,6 +330,7 @@ function restartQuiz() {
     currentPartIndex = 0;
     userAnswers = {};
     questionsByPart = {};
+    window.scrollTo(0, 0);
 }
 
 // Initialize

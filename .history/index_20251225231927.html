@@ -49,10 +49,15 @@
     <div id="quiz-container" class="quiz-container hidden">
       <div class="quiz-header">
         <h2 id="part-title">Quiz in Progress</h2>
+        
+        <div class="selected-parts" id="selected-parts">
+          <!-- Selected parts will be shown here -->
+        </div>
       </div>
 
       <div id="question-container">
-        </div>
+        <!-- Questions will be dynamically inserted here -->
+      </div>
 
       <div class="navigation">
         <button id="prev-btn" class="nav-btn" style="display: none;">Previous Part</button>
@@ -63,22 +68,17 @@
 
     <div id="results-container" class="results-container hidden">
       <h2>Quiz Results</h2>
-      
       <div class="score">
         <p>Score: <span id="score">0</span> / <span id="total">0</span></p>
         <p>Accuracy: <span id="percentage">0</span>%</p>
       </div>
-
-      <div class="result-actions">
-        <button id="restart-btn" class="restart-btn">Retake Test</button>
-        <a href="https://fangdongyzu.github.io/tocflmock/" class="home-btn">Home Page</a>
-      </div>
-
       <div class="part-breakdown" id="part-breakdown">
-        </div>
-      
+        <!-- Part breakdown will be shown here -->
+      </div>
       <div id="results-details" class="results-details">
-        </div>
+        <!-- Results will be dynamically inserted here -->
+      </div>
+      <button id="restart-btn" class="restart-btn">Restart</button>
     </div>
   </div>
 

@@ -15,12 +15,14 @@ const submitBtn = document.getElementById('submit-btn');
 const restartBtn = document.getElementById('restart-btn');
 const scoreElement = document.getElementById('score');
 const totalElement = document.getElementById('total');
-const percentageElement = document.getElementById('percentage');
 const resultsDetails = document.getElementById('results-details');
 const partBreakdownElement = document.getElementById('part-breakdown');
 const startQuizBtn = document.getElementById('start-quiz-btn');
 
-// Part information
+// Try to get home button, ignore if not found (to prevent errors if HTML isn't updated yet)
+const homeBtn = document.getElementById('home-btn');
+
+// Part information (Ranges removed)
 const partInfo = {
     1: { name: "Part 1: Sentence Comprehension" },
     2: { name: "Part 2: Picture Description" },
@@ -35,6 +37,12 @@ prevBtn.addEventListener('click', showPreviousPart);
 nextBtn.addEventListener('click', showNextPart);
 submitBtn.addEventListener('click', submitQuiz);
 restartBtn.addEventListener('click', restartQuiz);
+
+if (homeBtn) {
+    homeBtn.addEventListener('click', () => {
+        window.location.href = "https://fangdongyzu.github.io/tocflmock/";
+    });
+}
 
 // Update start button state based on selection
 document.querySelectorAll('.part-checkbox input').forEach(checkbox => {
@@ -158,9 +166,9 @@ function createStandardQuestion(question) {
     // 決定是否在卡片內顯示圖片
     const showImageInCard = question.image && !isSharedImageRange;
 
-    // For Part 1, we do NOT show the generated option letter circle (A, B, C...)
-    const showOptionLetter = question.part !== 1;
-
+    // --- UPDATED: No longer generating <span class="option-letter"> ---
+    // We assume question.options already contains "A", "B", etc.
+    // e.g., "A. This is the answer"
     return `
         <div class="question-item">
             <div class="question-text">${question.id}. ${question.question}</div>
@@ -171,10 +179,9 @@ function createStandardQuestion(question) {
             ` : ''}
             <div class="options">
                 ${question.options.map((option, index) => {
-                    const optionLetter = String.fromCharCode(65 + index);
+                    const optionLetter = String.fromCharCode(65 + index); // Used only for data attribute logic
                     return `
                         <div class="option" data-question-id="${question.id}" data-option="${optionLetter}">
-                            ${showOptionLetter ? `<span class="option-letter">${optionLetter}</span>` : ''}
                             <span class="option-text">${option}</span>
                         </div>
                     `;
@@ -252,7 +259,7 @@ function submitQuiz() {
     // Display overall results
     scoreElement.textContent = totalScore;
     totalElement.textContent = totalQuestions;
-    percentageElement.textContent = totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
+    // Percentage element removed from requirements
     
     // Show part breakdown
     showPartBreakdown(partScores);
@@ -263,9 +270,6 @@ function submitQuiz() {
     // Switch to results view
     quizContainer.classList.add('hidden');
     resultsContainer.classList.remove('hidden');
-
-  // JUMP TO TOP IMMEDIATELY (No scrolling effect)
-    window.scrollTo(0, 0);
 }
 
 function showPartBreakdown(partScores) {
